@@ -102,7 +102,7 @@ class Led : public EventManager {
 public:
     void toggle() {
         state = !state;
-        qDebug() << "LED state:" << state;
+        std::cout << "LED state:" << state;
     }
 
 private:
@@ -135,7 +135,7 @@ class Display : public EventManager {
 public:
     void print(float& temp) {
         temp += 0.5;
-        qDebug() << "Temp adjusted:" << temp;
+        std::cout << "Temp adjusted:" << temp;
     }
 };
 ```
@@ -168,7 +168,7 @@ private:
 class Consumer : public EventManager {
 public:
     void handle(Data* d) {
-        qDebug() << "Received:" << d->x;
+        std::cout << "Received:" << d->x;
     }
 };
 ```
